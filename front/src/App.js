@@ -6,6 +6,7 @@ import {PrivateRoute} from "./Routes/PrivateRoute";
 import {GlobalStyle} from "./Styles/global";
 import AuthForm from "./Pages/AuthFormPage";
 import EditTaskPage from "./Pages/EditPage";
+import CreateTaskPage from "./Pages/CreatePage";
 
 function App() {
     return (
@@ -28,6 +29,14 @@ function App() {
                         element={
                             <PrivateRoute>
                                 <EditTaskPage/>
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/create-task"
+                        element={
+                            <PrivateRoute>
+                                <CreateTaskPage/>
                             </PrivateRoute>
                         }
                     />

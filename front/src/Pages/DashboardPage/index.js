@@ -61,6 +61,11 @@ export default function Dashboard() {
         await fetchTasks(status !== 'all' ? status : null);
     };
 
+    const handleCreateTask = () => {
+        navigate('/create-task');
+    };
+
+
     const handleDeleteTask = async (taskId) => {
         if (window.confirm('Tem certeza que deseja excluir esta tarefa?')) {
             try {
@@ -84,7 +89,7 @@ export default function Dashboard() {
                     {tasks.length === 0 && (<span> Você não possui tarefas cadastradas</span>)}
                 </div>
                 <div>
-                    <S.CreateButton>Criar tarefa</S.CreateButton>
+                    <S.CreateButton onClick={handleCreateTask}>Criar tarefa</S.CreateButton>
                     <S.LogoutButton onClick={handleLogout}>Sair</S.LogoutButton>
                 </div>
             </S.Header>
