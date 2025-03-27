@@ -14,6 +14,14 @@ readonly class TaskByStatusService implements TaskByStatusServiceInterface
 
     public function __invoke(int $status, int $user): array
     {
+        if ($status <= 0) {
+            throw new \InvalidArgumentException('Status ID must be positive');
+        }
+
+        if ($user <= 0) {
+            throw new \InvalidArgumentException('User ID must be positive');
+        }
+
         return $this->taskRepository->getTaskByStatus($status, $user);
     }
 }

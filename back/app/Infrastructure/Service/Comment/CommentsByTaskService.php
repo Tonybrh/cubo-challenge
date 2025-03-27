@@ -14,6 +14,10 @@ readonly class CommentsByTaskService implements CommentsByTaskServiceInterface
 
     public function __invoke(int $taskId): array
     {
+        if ($taskId <= 0) {
+            throw new \InvalidArgumentException('Task ID must be positive');
+        }
+
         return $this->commentRepository->findByTaskId($taskId);
     }
 }
