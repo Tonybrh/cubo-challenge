@@ -2,9 +2,9 @@
 
 namespace App\Infrastructure\service\User;
 
-use App\domain\dto\UserLoggedResponseDto;
-use App\domain\Exception\UnauthorizedException;
-use App\domain\Service\LoginUserServiceInterface;
+use App\Domain\Dto\UserLoggedResponseDto;
+use App\Domain\Exception\UnauthorizedException;
+use App\Domain\Service\LoginUserServiceInterface;
 use App\Http\Request\LoginUserPostRequest;
 use Illuminate\Support\Facades\Auth;
 

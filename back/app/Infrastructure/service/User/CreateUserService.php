@@ -2,9 +2,9 @@
 
 namespace App\Infrastructure\service\User;
 
-use App\domain\dto\UserLoggedResponseDto;
-use App\domain\Models\User;
-use App\domain\Service\CreateUserServiceInterface;
+use App\Domain\Dto\UserLoggedResponseDto;
+use App\Domain\Models\User;
+use App\Domain\Service\CreateUserServiceInterface;
 use App\Http\Request\CreateUserPostRequest;
 
 class CreateUserService implements CreateUserServiceInterface

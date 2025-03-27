@@ -1,6 +1,6 @@
 <?php
 
-namespace App\domain\dto;
+namespace App\Domain\Dto;
 
 class UserLoggedResponseDto
 {

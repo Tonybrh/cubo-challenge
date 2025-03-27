@@ -1,8 +1,8 @@
 <?php
 
-namespace App\domain\Service;
+namespace App\Domain\Service;
 
-use App\domain\dto\UserLoggedResponseDto;
+use App\domain\Dto\UserLoggedResponseDto;
 use App\Http\Request\LoginUserPostRequest;
 
 interface LoginUserServiceInterface
