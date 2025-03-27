@@ -1,6 +1,6 @@
 <?php
 
-namespace App\domain\Exception;
+namespace App\Domain\Exception;
 
 class UnauthorizedException extends \DomainException
 {

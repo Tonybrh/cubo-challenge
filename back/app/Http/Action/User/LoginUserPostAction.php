@@ -2,7 +2,7 @@
 
 namespace App\Http\Action\User;
 
-use App\domain\Service\LoginUserServiceInterface;
+use App\Domain\Service\LoginUserServiceInterface;
 use App\Http\Request\LoginUserPostRequest;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;

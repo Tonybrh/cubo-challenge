@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\domain\Service\CreateUserServiceInterface;
-use App\domain\Service\LoginUserServiceInterface;
+use App\Domain\Service\CreateUserServiceInterface;
+use App\Domain\Service\LoginUserServiceInterface;
 use App\Infrastructure\service\User\CreateUserService;
 use App\Infrastructure\service\User\LoginUserService;
 use Illuminate\Support\ServiceProvider;

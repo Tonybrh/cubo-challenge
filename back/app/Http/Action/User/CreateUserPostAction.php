@@ -2,7 +2,7 @@
 
 namespace App\Http\Action\User;
 
-use App\domain\Service\CreateUserServiceInterface;
+use App\Domain\Service\CreateUserServiceInterface;
 use App\Http\Request\CreateUserPostRequest;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
