@@ -4,7 +4,7 @@ namespace App\Http\Action\Task;
 
 use App\Domain\Models\Task;
 use App\Domain\Service\Task\EditTaskServiceInterface;
-use App\Http\Request\EditTaskPutRequest;
+use App\Http\Request\Task\EditTaskPutRequest;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 readonly class EditTaskPutAction
 {
-    use AuthorizesRequests;
     public function __construct(
       private EditTaskServiceInterface $editTaskService
     ) {
@@ -22,6 +21,7 @@ readonly class EditTaskPutAction
     {
         $user = $request->user();
         $task = Task::query()->findOrFail($task);
+
         if($user->cannot('update', $task)) {
             throw new AuthorizationException();
         }

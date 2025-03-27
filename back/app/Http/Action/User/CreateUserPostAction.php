@@ -3,7 +3,7 @@
 namespace App\Http\Action\User;
 
 use App\Domain\Service\CreateUserServiceInterface;
-use App\Http\Request\CreateUserPostRequest;
+use App\Http\Request\User\CreateUserPostRequest;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
