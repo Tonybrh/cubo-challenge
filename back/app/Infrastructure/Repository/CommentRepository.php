@@ -11,4 +11,9 @@ class CommentRepository implements CommentRepositoryInterface
     {
         return Comment::query()->create($commentData);
     }
+
+    public function findByTaskId(int $taskId): array
+    {
+        return Comment::query()->where('task_id', $taskId)->get()->toArray();
+    }
 }

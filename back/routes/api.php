@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Action\Comment\CommentsByTaskGetAction;
 use App\Http\Action\Comment\CreateCommentPostAction;
 use App\Http\Action\Task\CreateTaskPostAction;
 
@@ -22,6 +23,7 @@ Route::middleware('auth:sanctum')->prefix('task')->group(function () {
 
 Route::middleware('auth:sanctum')->prefix('comment')->group(function () {
     Route::post('/create', CreateCommentPostAction::class)->name('tasks.filtered');
+    Route::get('/{task}', CommentsByTaskGetAction::class)->name('tasks.filtered');
 });
 
 Route::middleware('auth:sanctum')->prefix('system')->group(function () {

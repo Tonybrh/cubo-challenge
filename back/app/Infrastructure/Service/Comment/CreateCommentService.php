@@ -4,8 +4,7 @@ namespace App\Infrastructure\Service\Comment;
 
 use App\Domain\Dto\CreatedCommentResponseDto;
 use App\Domain\Repository\CommentRepositoryInterface;
-use App\Domain\Repository\CreateCommentServiceInterface;
-use App\Http\Request\Comment\CreateCommentPostRequest;
+use App\Domain\Service\Comment\CreateCommentServiceInterface;
 
 readonly class CreateCommentService implements CreateCommentServiceInterface
 {
