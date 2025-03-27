@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\service\User;
+namespace App\Infrastructure\Service\User;
 
 use App\Domain\Dto\UserLoggedResponseDto;
 use App\Domain\Models\User;
