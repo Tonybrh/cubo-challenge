@@ -51,4 +51,9 @@ class TaskRepository implements TaskRepositoryInterface
             ->get()
             ->toArray();
     }
+
+    public function findById(int $id): array
+    {
+        return Task::query()->findOrFail($id)->toArray();
+    }
 }
