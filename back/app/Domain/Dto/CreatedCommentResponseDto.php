@@ -8,6 +8,7 @@ class CreatedCommentResponseDto
         public string $content,
         public string $author,
         public string $task_id,
+        public string $created_at
     ) {
     }
 }

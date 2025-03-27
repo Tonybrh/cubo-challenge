@@ -169,3 +169,19 @@ export const Select = styled.select`
     border-radius: 4px;
     font-size: 1rem;
 `;
+
+export const CommentButton = styled.button`
+    padding: 0.5rem 1rem;
+    background: #9c27b0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+
+    &:hover {
+        background: #7b1fa2;
+    }
+`;
+

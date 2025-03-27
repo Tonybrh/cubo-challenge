@@ -21,7 +21,8 @@ readonly class CreateCommentService implements CreateCommentServiceInterface
         return new CreatedCommentResponseDto(
             $comment->content,
             $comment->user_id,
-            $comment->task_id
+            $comment->task_id,
+            $comment->created_at
         );
     }
 }
