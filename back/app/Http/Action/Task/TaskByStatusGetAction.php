@@ -17,7 +17,7 @@ readonly class TaskByStatusGetAction
     public function __invoke(TaskStatusDateFilteredRequest $request): JsonResponse
     {
         return new JsonResponse(
-            ($this->taskByStatusService)($request->status),
+            ($this->taskByStatusService)($request->status, $request->user()->id),
             Response::HTTP_OK
         );
     }
