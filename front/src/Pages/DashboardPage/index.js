@@ -106,7 +106,7 @@ export default function Dashboard() {
                 </S.FilterSelect>
             </S.FiltersContainer>
             {selectedStatus !== 'all' ?
-                <span>Exibindo tarefas {TaskStatusEnum.getLabel(selectedStatus)}</span>
+                <span>Exibindo tarefas {TaskStatusEnum.getLabel(selectedStatus)} ordenadas pela data de criação</span>
                 : <span>Exibindo todas as tarefas</span>
             }
             <S.TasksGrid>

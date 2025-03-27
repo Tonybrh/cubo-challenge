@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Action\Comment\CreateCommentPostAction;
 use App\Http\Action\Task\CreateTaskPostAction;
 
 use App\Http\Action\Task\DeleteTaskAction;
@@ -17,6 +18,10 @@ Route::middleware('auth:sanctum')->prefix('task')->group(function () {
     Route::get('/filtered', TaskByStatusGetAction::class)->name('tasks.filtered');
     Route::get('/all', TaskByUserGetAction::class)->name('tasks.filtered');
     Route::get('/{task}', FindByIdGetAction::class)->name('task.id');
+});
+
+Route::middleware('auth:sanctum')->prefix('comment')->group(function () {
+    Route::post('/create', CreateCommentPostAction::class)->name('tasks.filtered');
 });
 
 Route::middleware('auth:sanctum')->prefix('system')->group(function () {
