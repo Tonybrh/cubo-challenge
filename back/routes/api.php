@@ -4,6 +4,7 @@ use App\Http\Action\Task\CreateTaskPostAction;
 
 use App\Http\Action\Task\DeleteTaskAction;
 use App\Http\Action\Task\EditTaskPutAction;
+use App\Http\Action\Task\FindByIdGetAction;
 use App\Http\Action\Task\TaskByStatusGetAction;
 use App\Http\Action\Task\TaskByUserGetAction;
 use App\Http\Action\User\MeGetAction;
@@ -15,6 +16,7 @@ Route::middleware('auth:sanctum')->prefix('task')->group(function () {
     Route::delete('/delete/{task}', DeleteTaskAction::class)->name('task.delete');
     Route::get('/filtered', TaskByStatusGetAction::class)->name('tasks.filtered');
     Route::get('/all', TaskByUserGetAction::class)->name('tasks.filtered');
+    Route::get('/{task}', FindByIdGetAction::class)->name('task.id');
 });
 
 Route::middleware('auth:sanctum')->prefix('system')->group(function () {

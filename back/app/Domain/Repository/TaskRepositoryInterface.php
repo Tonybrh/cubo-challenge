@@ -11,4 +11,5 @@ interface TaskRepositoryInterface
     public function deleteTaskAndComments(int $taskId): void;
     public function getTaskByStatus(int $status, int $user): array;
     public function getTaskByUser(int $user): array;
+    public function findById(int $id): array;
 }

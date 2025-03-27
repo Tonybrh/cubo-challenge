@@ -135,10 +135,37 @@ export const FilterLabel = styled.span`
     font-weight: 500;
     color: #333;
 `;
-
 export const FilterSelect = styled.select`
     padding: 0.5rem;
     border-radius: 4px;
     border: 1px solid #ddd;
     background: white;
+`;
+
+export const Input = styled.input`
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+`;
+
+export const TextArea = styled.textarea`
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+`;
+
+export const Select = styled.select`
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
 `;
