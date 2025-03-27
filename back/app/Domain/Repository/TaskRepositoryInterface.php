@@ -7,4 +7,5 @@ use App\Domain\Models\Task;
 interface TaskRepositoryInterface
 {
     public function save(array $taskData): Task;
+    public function update(array $taskData): Task;
 }

@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Infrastructure\service\Task;
+namespace App\Infrastructure\Service\Task;
 
 use App\Domain\Dto\CreatedTaskResponseDto;
 use App\Domain\Repository\TaskRepositoryInterface;
 use App\Domain\Service\Task\CreateTaskServiceInterface;
 
-class CreateTaskService implements CreateTaskServiceInterface
+readonly class CreateTaskService implements CreateTaskServiceInterface
 {
     public function __construct(
-        private readonly TaskRepositoryInterface $taskRepository
+        private TaskRepositoryInterface $taskRepository
     ) {
     }
 

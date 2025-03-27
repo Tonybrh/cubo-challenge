@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Domain\Repository\TaskRepositoryInterface;
 use App\Domain\Service\Task\CreateTaskServiceInterface;
+use App\Domain\Service\Task\EditTaskServiceInterface;
 use App\Infrastructure\Repository\TaskRepository;
-use App\Infrastructure\service\Task\CreateTaskService;
+use App\Infrastructure\Service\Task\CreateTaskService;
+use App\Infrastructure\Service\Task\EditTaskService;
 use Illuminate\Support\ServiceProvider;
 
 class TaskServiceProvider extends ServiceProvider
@@ -31,6 +33,11 @@ class TaskServiceProvider extends ServiceProvider
         $this->app->bind(
             TaskRepositoryInterface::class,
             TaskRepository::class
+        );
+
+        $this->app->bind(
+            EditTaskServiceInterface::class,
+            EditTaskService::class
         );
     }
 }
