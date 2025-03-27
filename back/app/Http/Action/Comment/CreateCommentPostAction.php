@@ -2,7 +2,7 @@
 
 namespace App\Http\Action\Comment;
 
-use App\Domain\Repository\CreateCommentServiceInterface;
+use App\Domain\Service\Comment\CreateCommentServiceInterface;
 use App\Http\Request\Comment\CreateCommentPostRequest;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;

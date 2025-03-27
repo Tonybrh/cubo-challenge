@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Repository;
+namespace App\Domain\Service\Comment;
 
 use App\Domain\Dto\CreatedCommentResponseDto;
 
