@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+import Dashboard from "./Screens/Dashboard";
+import { PrivateRoute } from "./Routes/PrivateRoute";
+import {GlobalStyle} from "./Styles/global";
+import AuthForm from "./Screens/AuthForm";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+          <GlobalStyle />
+          <BrowserRouter>
+              <Routes>
+                  <Route path="/" element={<Navigate to="/auth" />} />
+                  <Route path="/auth" element={<AuthForm />} />
+                  <Route
+                      path="/dashboard"
+                      element={
+                          <PrivateRoute>
+                              <Dashboard />
+                          </PrivateRoute>
+                      }
+                  />
+              </Routes>
+          </BrowserRouter>
+      </>
   );
 }
 
