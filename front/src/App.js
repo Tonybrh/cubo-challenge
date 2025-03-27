@@ -7,6 +7,7 @@ import {GlobalStyle} from "./Styles/global";
 import AuthForm from "./Pages/AuthFormPage";
 import EditTaskPage from "./Pages/EditPage";
 import CreateTaskPage from "./Pages/CreatePage";
+import TaskCommentsPage from "./Pages/TaskCommentPage";
 
 function App() {
     return (
@@ -37,6 +38,14 @@ function App() {
                         element={
                             <PrivateRoute>
                                 <CreateTaskPage/>
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path="/task/:taskId/comments"
+                        element={
+                            <PrivateRoute>
+                                <TaskCommentsPage/>
                             </PrivateRoute>
                         }
                     />

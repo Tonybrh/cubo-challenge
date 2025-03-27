@@ -120,6 +120,9 @@ export default function Dashboard() {
                             <S.TaskStatus task_status_id={task.task_status_id}>
                                 {TaskStatusEnum.getLabel(task.task_status_id)}
                             </S.TaskStatus>
+                            <S.CommentButton onClick={() => navigate(`/task/${task.id}/comments`)}>
+                                Ver Comentários
+                            </S.CommentButton>
                             <S.EditButton onClick={() => handleEditTask(task.id)}>
                                 Editar
                             </S.EditButton>
