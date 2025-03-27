@@ -12,8 +12,8 @@ readonly class TaskByStatusService implements TaskByStatusServiceInterface
     ) {
     }
 
-    public function __invoke(int $status): array
+    public function __invoke(int $status, int $user): array
     {
-        return $this->taskRepository->getTaskByStatus($status)->toArray();
+        return $this->taskRepository->getTaskByStatus($status, $user);
     }
 }
