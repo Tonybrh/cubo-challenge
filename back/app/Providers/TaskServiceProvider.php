@@ -6,10 +6,12 @@ use App\Domain\Repository\TaskRepositoryInterface;
 use App\Domain\Service\Task\CreateTaskServiceInterface;
 use App\Domain\Service\Task\DeleteTaskServiceInterface;
 use App\Domain\Service\Task\EditTaskServiceInterface;
+use App\Domain\Service\Task\TaskByStatusServiceInterface;
 use App\Infrastructure\Repository\TaskRepository;
 use App\Infrastructure\Service\Task\CreateTaskService;
 use App\Infrastructure\Service\Task\DeleteTaskService;
 use App\Infrastructure\Service\Task\EditTaskService;
+use App\Infrastructure\Service\Task\TaskByStatusService;
 use Illuminate\Support\ServiceProvider;
 
 class TaskServiceProvider extends ServiceProvider
@@ -45,6 +47,11 @@ class TaskServiceProvider extends ServiceProvider
         $this->app->bind(
             DeleteTaskServiceInterface::class,
             DeleteTaskService::class
+        );
+
+        $this->app->bind(
+            TaskByStatusServiceInterface::class,
+            TaskByStatusService::class
         );
     }
 }
