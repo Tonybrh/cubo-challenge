@@ -1,13 +1,10 @@
 <?php
 
 use App\Http\Action\User\CreateUserPostAction;
-use Illuminate\Http\Request;
+use App\Http\Action\User\LoginUserPostAction;
 use Illuminate\Support\Facades\Route;
-
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
 
 Route::prefix('auth')->group(function() {
     Route::post('/user/create', CreateUserPostAction::class)->name('user.create');
+    Route::post('/user/login', LoginUserPostAction::class)->name('user.login');
 });
