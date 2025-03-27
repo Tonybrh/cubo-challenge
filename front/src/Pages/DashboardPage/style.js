@@ -116,7 +116,7 @@ export const DeleteButton = styled.button`
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     width: 100%;
 
     &:hover {

@@ -1,38 +1,17 @@
-import React, {useState, useEffect} from 'react';
-import {useParams, useNavigate} from 'react-router-dom';
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import api from '../../Utils/api';
 import * as S from '../DashboardPage/style';
-import {TaskStatusEnum} from "../../Enum/taskEnum";
+import {TaskStatusEnum} from '../../Enum/taskEnum';
 
-export default function EditTaskPage() {
-    const {taskId} = useParams();
+export default function CreateTaskPage() {
     const navigate = useNavigate();
-    const [task, setTask] = useState(null);
-    const [loading, setLoading] = useState(true);
     const [formData, setFormData] = useState({
         title: '',
         description: '',
         task_status_id: TaskStatusEnum.PENDING
     });
-
-    useEffect(() => {
-        const fetchTask = async () => {
-            try {
-                const response = await api.get(`/task/${taskId}`);
-                setTask(response.data);
-                setFormData({
-                    title: response.data.title,
-                    description: response.data.description,
-                    status: response.data.status
-                });
-            } catch (error) {
-                console.error('Failed to fetch task', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchTask();
-    }, [taskId]);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -44,36 +23,21 @@ export default function EditTaskPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+
         try {
-            await api.put(`/task/update/${taskId}`, formData);
+            await api.post('/task/create', formData);
             navigate('/dashboard');
         } catch (error) {
-            console.error('Failed to update task', error);
+            console.error('Failed to create task', error);
+        } finally {
+            setLoading(false);
         }
     };
-
-    const handleDelete = async () => {
-        if (window.confirm('Tem certeza que deseja excluir esta tarefa?')) {
-            try {
-                await api.delete(`/task/delete/${taskId}`);
-                navigate('/dashboard');
-            } catch (error) {
-                console.error('Failed to delete task', error);
-            }
-        }
-    };
-
-    if (loading) {
-        return <S.DashboardContainer>Carregando...</S.DashboardContainer>;
-    }
-
-    if (!task) {
-        return <S.DashboardContainer>Task não encontrada</S.DashboardContainer>;
-    }
 
     return (
         <S.DashboardContainer>
-            <h2>Editar Task</h2>
+            <h2>Criar Nova Tarefa</h2>
 
             <form onSubmit={handleSubmit}>
                 <div>
@@ -111,12 +75,12 @@ export default function EditTaskPage() {
                     </S.Select>
                 </div>
 
-                <div style={{display: 'flex', gap: '1rem'}}>
-                    <S.EditButton type="submit">
-                        Salvar Alterações
+                <div style={{display: 'flex', gap: '1rem', marginTop: '1rem'}}>
+                    <S.EditButton type="submit" disabled={loading}>
+                        {loading ? 'Criando...' : 'Criar Tarefa'}
                     </S.EditButton>
-                    <S.DeleteButton type="button" onClick={handleDelete}>
-                        Excluir Task
+                    <S.DeleteButton type="button" onClick={() => navigate('/dashboard')}>
+                        Cancelar
                     </S.DeleteButton>
                 </div>
             </form>
