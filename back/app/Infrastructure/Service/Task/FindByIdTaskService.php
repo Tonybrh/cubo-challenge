@@ -6,16 +6,20 @@ use App\Domain\Repository\TaskRepositoryInterface;
 use App\Domain\Service\Task\FindByIdServiceInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class FindByIdTaskService implements FindByIdServiceInterface
+readonly class FindByIdTaskService implements FindByIdServiceInterface
 {
     public function __construct(
-        private readonly TaskRepositoryInterface $taskRepository
+        private TaskRepositoryInterface $taskRepository
     ) {
     }
 
     public function __invoke(int $id): array
     {
         $task = $this->taskRepository->findById($id);
+
+        if ($id <= 0) {
+            throw new \InvalidArgumentException('Invalid task ID');
+        }
 
         if(empty($task)){
             throw new NotFoundHttpException('Task not found');
