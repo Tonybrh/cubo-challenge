@@ -11,6 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
             Route::prefix('api')
                 ->group(function () {
                     require base_path('routes/auth.php');
+                    require base_path('routes/api.php');
                 });
         },
         api: __DIR__.'/../routes/api.php',
