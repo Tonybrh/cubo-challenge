@@ -22,4 +22,12 @@ class TaskRepository implements TaskRepositoryInterface
 
         return $task;
     }
+
+    public function deleteTaskAndComments(int $taskId): void
+    {
+        $task = Task::query()->findOrFail($taskId);
+        $task->comments()->delete();
+
+        $task->delete();
+    }
 }

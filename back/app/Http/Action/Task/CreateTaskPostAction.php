@@ -3,7 +3,7 @@
 namespace App\Http\Action\Task;
 
 use App\Domain\Service\Task\CreateTaskServiceInterface;
-use App\Http\Request\CreateTaskPostRequest;
+use App\Http\Request\Task\CreateTaskPostRequest;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
