@@ -23,7 +23,7 @@ export const BackButton = styled.button`
     border-radius: 4px;
     cursor: pointer;
     margin-bottom: 1rem;
-    width: 20%;
+    width: 140px;
 
     &:hover {
         background: #455a64;
@@ -69,7 +69,6 @@ export const AddCommentButton = styled.button`
     border-radius: 4px;
     cursor: pointer;
     margin-top: 1rem;
-    width: 20%;
 
     &:hover {
         background: #388e3c;

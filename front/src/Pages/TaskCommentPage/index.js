@@ -100,9 +100,11 @@ export default function TaskCommentsPage() {
             )}
 
             {!showForm && comments.length > 0 && (
-                <S.AddCommentButton onClick={() => setShowForm(true)}>
-                    Adicionar Novo Comentário
-                </S.AddCommentButton>
+                <div>
+                    <S.AddCommentButton onClick={() => setShowForm(true)}>
+                        Adicionar Novo Comentário
+                    </S.AddCommentButton>
+                </div>
             )}
         </S.DashboardContainer>
     );
