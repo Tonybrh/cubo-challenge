@@ -4,6 +4,7 @@ namespace App\Infrastructure\Repository;
 
 use App\Domain\Models\Task;
 use App\Domain\Repository\TaskRepositoryInterface;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class TaskRepository implements TaskRepositoryInterface
 {
@@ -29,5 +30,13 @@ class TaskRepository implements TaskRepositoryInterface
         $task->comments()->delete();
 
         $task->delete();
+    }
+
+    public function getTaskByStatus(int $status): LengthAwarePaginator
+    {
+        return Task::query()
+            ->where('task_status_id', $status)
+            ->orderBy('created_at', 'desc')
+            ->paginate(15);
     }
 }
