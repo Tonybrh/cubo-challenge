@@ -2,7 +2,7 @@
 
 namespace App\Domain\Service;
 
-use App\domain\Dto\UserLoggedResponseDto;
+use App\Domain\Dto\UserLoggedResponseDto;
 use App\Http\Request\LoginUserPostRequest;
 
 interface LoginUserServiceInterface
