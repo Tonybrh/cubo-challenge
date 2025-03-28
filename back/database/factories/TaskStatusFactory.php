@@ -19,4 +19,22 @@ class TaskStatusFactory extends Factory
             ]),
         ];
     }
+
+    public function withSpecificIds()
+    {
+        return $this->state(function (array $attributes) {
+            static $id = 0;
+            $id++;
+
+            return [
+                'id' => $id,
+                'name' => match($id) {
+                    1 => 'Pendente',
+                    2 => 'Em Andamento',
+                    3 => 'Concluída',
+                    default => $this->faker->word
+                }
+            ];
+        });
+    }
 }
