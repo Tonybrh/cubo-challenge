@@ -1,7 +1,6 @@
 # Laravel
 /vendor/
 .env
-.env.*
 storage/framework/cache/*
 storage/framework/views/*
 storage/logs/*

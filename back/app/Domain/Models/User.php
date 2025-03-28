@@ -33,7 +33,7 @@ class User extends Authenticatable
         ];
     }
 
-    protected function newFactory(): UserFactory
+    protected static function newFactory(): UserFactory
     {
         return UserFactory::new();
     }

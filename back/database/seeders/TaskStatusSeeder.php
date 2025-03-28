@@ -12,14 +12,10 @@ class TaskStatusSeeder extends Seeder
      */
     public function run(): void
     {
-        $statuses = [
-            ['name' => 'Pendente'],
-            ['name' => 'Em Andamento'],
-            ['name' => 'Concluída'],
-        ];
-
-        foreach ($statuses as $status) {
-            TaskStatus::query()->firstOrCreate($status);
-        }
+        TaskStatus::query()->upsert([
+            ['id' => 1, 'name' => 'Pendente'],
+            ['id' => 2, 'name' => 'Em Andamento'],
+            ['id' => 3, 'name' => 'Concluída']
+        ], ['id'], ['name']);
     }
 }
