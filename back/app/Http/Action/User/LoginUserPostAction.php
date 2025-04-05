@@ -4,7 +4,8 @@ namespace App\Http\Action\User;
 
 use App\Domain\Service\LoginUserServiceInterface;
 use App\Http\Request\User\LoginUserPostRequest;
-use Symfony\Component\HttpFoundation\JsonResponse;
+use App\Http\Resource\LoginUserPostResource;
+use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 readonly class LoginUserPostAction
@@ -14,11 +15,8 @@ readonly class LoginUserPostAction
     ) {
     }
 
-    public function __invoke(LoginUserPostRequest $loginUserPostRequest): JsonResponse
+    public function __invoke(LoginUserPostRequest $loginUserPostRequest): LoginUserPostResource
     {
-        return new JsonResponse(
-            ($this->userService)($loginUserPostRequest),
-            Response::HTTP_OK
-        );
+        return new LoginUserPostResource(($this->userService)($loginUserPostRequest));
     }
 }
