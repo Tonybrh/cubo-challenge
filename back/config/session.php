@@ -150,13 +150,13 @@ return [
     | Session Cookie Domain
     |--------------------------------------------------------------------------
     |
-    | This value determines the domain and subdomains the session cookie is
+    | This value determines the Domain and subdomains the session cookie is
     | available to. By default, the cookie will be available to the root
-    | domain and all subdomains. Typically, this shouldn't be changed.
+    | Domain and all subdomains. Typically, this shouldn't be changed.
     |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
+    'Domain' => env('SESSION_DOMAIN'),
 
     /*
     |--------------------------------------------------------------------------
